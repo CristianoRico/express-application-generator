@@ -19,9 +19,13 @@ router.post("/",
 // Mengatur rute GET untuk mendapatkan data fakultas berdasarkan ID
 router.get("/:id", fakultasController.getFakultasById);
 // Mengatur rute PUT untuk memperbarui data fakultas berdasarkan ID
-router.put("/:id",authMiddleware,roleMiddleware("admin"),fakultasController.updateFakultas);
+router.put("/:id",
+    // authMiddleware,roleMiddleware("admin"),
+    fakultasController.updateFakultas);
 // Mengatur rute DELETE untuk menghapus data fakultas berdasarkan ID
-router.delete("/:id",authMiddleware,roleMiddleware("admin"),fakultasController.deleteFakultas);
+router.delete("/:id",
+    // authMiddleware,roleMiddleware("admin"),
+    fakultasController.deleteFakultas);
 
 // Mengeksport router agar dapat digunakan di file lain (misalnya, di app.js)
 module.exports = router;
