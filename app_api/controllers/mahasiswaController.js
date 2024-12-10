@@ -8,10 +8,10 @@ const fs = require("fs");
 exports.createMahasiswa = async (req, res) => {
   const { npm, nama, prodi_id, jenis_kelamin, asal_sekolah } = req.body; // Destrukturisasi data dari body request
 
-  if (!req.file) {
-    // Validasi jika file foto tidak ada
-    return res.status(400).json({ message: "File foto is required" });
-  }
+  // if (!req.file) {
+  //   // Validasi jika file foto tidak ada
+  //   return res.status(400).json({ message: "File foto is required" });
+  // }
 
   try {
     const prodi = await Prodi.findById(prodi_id); // Mencari Prodi berdasarkan ID
